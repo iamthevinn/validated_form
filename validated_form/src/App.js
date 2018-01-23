@@ -19,7 +19,7 @@ class NameAndEmail extends React.Component {
     if (!this.isValidEmail(this.props.email))
       emailValidation = <label style={{color: "red"}}> Email isn't valid. Must include @ and .com</label>
     let disabled = true;
-    if (nameValidation === null && emailValidation === null && this.props.email.length != 0 && this.props.name.length != 0)
+    if (nameValidation === null && emailValidation === null && this.props.email.length !== 0 && this.props.name.length !== 0)
       disabled = false;
       return (
       <div>
@@ -40,7 +40,7 @@ class NameAndEmail extends React.Component {
           </label>
           <br />
           <br />
-          <button disabled={disabled}>Submit</button>
+          <input disabled={disabled}type="submit" value="Submit" />
         </form>
       </div>
     );
