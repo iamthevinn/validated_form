@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App1.css';
 
 class NameAndEmail extends React.Component {
 
@@ -15,7 +15,7 @@ class NameAndEmail extends React.Component {
     let nameValidation = null
     let emailValidation = null
     if (this.props.name.length > 0 && this.props.name.length < 8)
-      nameValidation = <label style={{color: "red"}}> Name isn't long enough</label>
+      nameValidation = <label className="labelStyle"> Name isn't long enough</label>
     if (!this.isValidEmail(this.props.email))
       emailValidation = <label style={{color: "red"}}> Email isn't valid. Must include @ and .com</label>
     let disabled = true;
@@ -25,15 +25,13 @@ class NameAndEmail extends React.Component {
       <div>
         <form onSubmit={this.props.handleSubmit}>
           <label>
-            Name:
-            <input type="text" value={this.props.name} onChange={this.props.handleNameChange} />
+            <input placeholder="Name" type="text" value={this.props.name} onChange={this.props.handleNameChange} />
             {nameValidation}
           </label>
           <br />
           <br />
           <label>
-            Email:
-            <input type="text" value={this.props.email} onChange={this.props.handleEmailChange} />
+            <input type="text" placeholder="Email" value={this.props.email} onChange={this.props.handleEmailChange} />
             {emailValidation}
           </label>
           <br />
