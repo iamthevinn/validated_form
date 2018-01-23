@@ -23,8 +23,6 @@ class NameAndEmail extends React.Component {
       disabled = false;
       return (
       <div>
-        <div style={{fontSize: '48px'}}>Validated Form</div>
-        <br />
         <form onSubmit={this.props.handleSubmit}>
           <label>
             Name:
@@ -69,6 +67,7 @@ class App extends React.Component {
   handleSubmit(event) {
     console.log("submit")
     this.setState({submitted: true});
+    event.preventDefault();
   }
   
 
@@ -79,6 +78,8 @@ class App extends React.Component {
        output = "Thanks. Your form was submitted"
     return (
     <div>
+    <div style={{fontSize: '48px'}}>Validated Form</div>
+    <br />
       {output}
     </div>
     );
